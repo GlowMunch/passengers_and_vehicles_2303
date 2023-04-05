@@ -18,7 +18,6 @@ RSpec.describe Park do
     expect(park.vehicles).to eq([vehicle_1, vehicle_2])
     expect(park.name).to eq("seaworld")
     expect(park.admission_price).to eq(10)
-    require 'pry'; binding.pry
   end
 end
 

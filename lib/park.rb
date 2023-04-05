@@ -10,14 +10,17 @@ class Park
 
   def add_vehicle(car)
     @vehicles << car
+  end
+#unable to make this work
+  def passengers
+    vehicles.passengers.each do |pass|
+      @passengers << pass
     end
   end
 
-  def passengers
-    @passengers = vehicles.find_all do |pass|
-      passengers
-    end
-    @passengers.count
+  def revenue
+    @revenue += (@passengers.count * admission_price)
+    @revenue
   end
 
 end
