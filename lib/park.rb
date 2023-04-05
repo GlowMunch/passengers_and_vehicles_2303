@@ -12,9 +12,11 @@ class Park
     @vehicles << car
   end
 
-  def add_passenger(car, pass)
-    car.add_passenger(pass)
-    @passengers << pass
+  def passengers
+    @passengers = vehicles.find_all do |pass|
+      passengers
+    end
+    @passengers.count
   end
 
 end

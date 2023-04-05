@@ -1,11 +1,11 @@
 class Vehicle
   attr_reader :year, :make, :model, :passengers
-  def initialize (year, make, model)
+  def initialize (year, make, model, passengers = [])
     @year = year
     @make = make
     @model = model
     @speeding = false
-    @passengers = []
+    @passengers = passengers
   end
 
   def speed
