@@ -2,21 +2,23 @@ require "./lib/passenger"
 
 RSpec.describe Passenger do
   it "Exists" do
-  # require './lib/passenger'
-  # true
-  charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
-  # <Passenger:0x00007fc1ad88b3c0...>
-  taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
-  # <Passenger:0x00007fe0da2cf1b0...>
-  expect(charlie.name).to eq("Charlie")
-  expect(charlie.age).to eq(18)
-require 'pry'; binding.pry
-  charlie.adult?
-  true
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
+    expect(charlie).to be_an_instace_of(Passenger)
+    expect(charlie.name).to eq("Charlie")
+    expect(charlie.age).to eq(18)
+  end
 
-  taylor.adult?
-  false
+  it "Can be an adult" do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
+    expect(charlie.adult?).to eq(true)
+    expect(taylor.adult?).to eq(false)
+  end
 
+  it "Can drive" do
+    charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+    taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
   charlie.driver?
   false
 
