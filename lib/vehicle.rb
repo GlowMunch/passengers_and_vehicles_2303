@@ -12,12 +12,19 @@ class Vehicle
     @speeding = true
   end
 
+  def speeding?
+    @speeding
+  end
+
   def add_passenger(ryder)
     @passengers << ryder
   end
 
   def num_adults
-    
+    adults = passengers.find_all do |adult|
+      adult.adult?
+    end
+    adults.count
   end
 
 end
