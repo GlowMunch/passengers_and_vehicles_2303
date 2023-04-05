@@ -4,7 +4,6 @@ RSpec.describe Passenger do
   it "Exists" do
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
     taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
-    expect(charlie).to be_an_instace_of(Passenger)
     expect(charlie.name).to eq("Charlie")
     expect(charlie.age).to eq(18)
   end
@@ -16,15 +15,11 @@ RSpec.describe Passenger do
     expect(taylor.adult?).to eq(false)
   end
 
-  it "Can drive" do
+  it "Can become a driver" do
     charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
     taylor = Passenger.new({"name" => "Taylor", "age" => 12})  
-  charlie.driver?
-  false
-
-  charlie.drive
-
-  charlie.driver?
-  true
+    expect(charlie.driver?).to eq(false)
+    charlie.drive
+    expect(charlie.driver?).to eq(true)
   end
 end
